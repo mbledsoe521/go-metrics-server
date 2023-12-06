@@ -1,0 +1,14 @@
+# Configuration file for self-healing service
+[Unit]
+Description=Go Web Server
+After=network.target
+
+[Service]
+Type=simple
+User=syndica
+WorkingDirectory=/data/webserver
+ExecStart=/data/webserver
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
